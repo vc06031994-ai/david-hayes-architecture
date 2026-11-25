@@ -18,11 +18,11 @@ const slides = [
   </nav>
 </section>
 <style>
-.hero{position:relative;min-height:max(42rem,100svh);display:flex;align-items:center;overflow:hidden;isolation:isolate;color:#fff;background:#45413d}
+.hero{position:relative;min-height:max(42rem,calc(100svh - var(--topbar-height)));display:flex;align-items:center;overflow:hidden;isolation:isolate;color:#fff;background:#45413d}
 .hero-background,.hero-shade{position:absolute;inset:0;z-index:-2}
 .hero-background{background-image:url('/images/david-hayes-hero.webp');background-size:cover;background-position:center 52%;transform:scale(1.005)}
 .hero-shade{z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.53) 0%,rgba(0,0,0,.34) 42%,rgba(0,0,0,.14) 100%),linear-gradient(180deg,rgba(0,0,0,.17),transparent 34%,rgba(0,0,0,.1))}
-.hero-content{width:min(100%,78rem);padding:calc(var(--topbar-height) + var(--header-height) + 4rem) var(--content-gutter) 5rem}
+.hero-content{width:min(100%,78rem);padding:calc(var(--header-height) + 4rem) var(--content-gutter) 5rem}
 .hero-slide{display:none;max-width:39rem;animation:slide-in .55s ease both}
 .hero-slide.is-active{display:block}
 .hero-slide h1{margin:0;font-family:var(--font-heading);font-size:clamp(2.8rem,5.1vw,4.4rem);font-weight:400;line-height:1.06;letter-spacing:.17em}
@@ -39,7 +39,7 @@ const slides = [
 .pagination-dot:hover{transform:scale(1.16)}
 .pagination-dot.is-active{background:#fff}
 @keyframes slide-in{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:translateY(0)}}
-@media(min-width:90rem){.hero{min-height:100svh}.hero-content{padding-left:max(var(--content-gutter),calc((100vw - 90rem)/2))}}
+@media(min-width:90rem){.hero{min-height:calc(100svh - var(--topbar-height))}.hero-content{padding-left:max(var(--content-gutter),calc((100vw - 90rem)/2))}}
 @media(max-width:48rem){
 .hero{min-height:max(43rem,100svh);align-items:flex-end}
 .hero-background{background-position:57% center}
