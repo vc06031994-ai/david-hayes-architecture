@@ -1,77 +1,71 @@
-<section id="hero">
-	<div id="hero-inner">
-		<h1 id="hero-heading">Keep building with your AI coding agent</h1>
-		<p id="hero-body">
-			Go back to your coding agent and keep prompting. Add pages, content,
-			and design as you go.
-		</p>
-		<a
-			href="https://dev.wix.com/docs/go-headless"
-			target="_blank"
-			rel="noopener noreferrer"
-			id="hero-cta">Learn More About Headless</a
-		>
-	</div>
+---
+const slides = [
+  { heading: 'DESIGNED AROUND<br />HOW YOU LIVE.', intro: 'Each room drawn and reviewed together, with your budget in mind.', body: 'Remodels, additions, and custom homes in the Bay Area. Designed and drawn by David Hayes, licensed architect.', primary: 'Start a Project', secondary: 'View a Project' },
+  { heading: 'THOUGHTFUL DESIGN.<br />BUILT AROUND YOU.', intro: 'A considered approach to the spaces you call home.', body: 'Explore remodels, additions, and custom homes shaped around the way you live.', primary: 'Start a Project', secondary: 'View a Project' },
+  { heading: 'YOUR HOME.<br />YOUR WAY OF LIVING.', intro: 'From the first conversation to the final details.', body: 'Work directly with David Hayes on a home designed with clarity, care, and your budget in mind.', primary: 'Start a Project', secondary: 'View a Project' },
+];
+---
+<section class="hero" aria-label="David Hayes Architecture introduction">
+  <div class="hero-background" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-content" aria-live="polite">
+    {slides.map((slide,index)=><article class:list={['hero-slide',index===0&&'is-active']} data-slide={index} aria-hidden={index!==0}>
+      <h1 set:html={slide.heading}></h1><p class="hero-intro">{slide.intro}</p><p class="hero-description">{slide.body}</p>
+      <div class="hero-actions"><a class="hero-button hero-button-primary" href="#start-project">{slide.primary}</a><a class="hero-button hero-button-secondary" href="#projects">{slide.secondary}</a></div>
+    </article>)}
+  </div>
+  <nav class="hero-pagination" aria-label="Hero slides">
+    {slides.map((slide,index)=><button class:list={['pagination-dot',index===0&&'is-active']} type="button" data-slide-to={index} aria-label={`Show slide ${index+1}`} aria-pressed={index===0}></button>)}
+  </nav>
 </section>
-
 <style>
-	#hero {
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 80px 40px;
-		position: relative;
-		overflow: hidden;
-		background: linear-gradient(135deg, #dde9de 0%, #eaedf4 55%, #e0dced 100%);
-		font-family:
-			Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
-			sans-serif;
-		box-sizing: border-box;
-	}
-
-	#hero-inner {
-		max-width: 800px;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	#hero-heading {
-		font-size: clamp(36px, 5vw, 64px);
-		font-weight: 400;
-		line-height: 1.05;
-		letter-spacing: -0.02em;
-		color: #1a1d2e;
-		margin: 0;
-	}
-
-	#hero-body {
-		margin: 20px 0 0;
-		font-size: 16px;
-		line-height: 1.6;
-		color: #4a4d5e;
-		max-width: 520px;
-	}
-
-	#hero-cta {
-		display: inline-block;
-		margin-top: 36px;
-		border-radius: 24px;
-		padding: 13px 28px;
-		font-size: 14px;
-		font-weight: 500;
-		width: fit-content;
-		background: #1a1d2e;
-		color: #fff;
-		text-decoration: none;
-	}
-
-	@media (max-width: 640px) {
-		#hero {
-			padding: 80px 20px;
-		}
-	}
+.hero{position:relative;min-height:max(42rem,100svh);display:flex;align-items:center;overflow:hidden;isolation:isolate;color:#fff;background:#45413d}
+.hero-background,.hero-shade{position:absolute;inset:0;z-index:-2}
+.hero-background{background-image:url('/images/david-hayes-hero.webp');background-size:cover;background-position:center 52%;transform:scale(1.005)}
+.hero-shade{z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.53) 0%,rgba(0,0,0,.34) 42%,rgba(0,0,0,.14) 100%),linear-gradient(180deg,rgba(0,0,0,.17),transparent 34%,rgba(0,0,0,.1))}
+.hero-content{width:min(100%,78rem);padding:calc(var(--topbar-height) + var(--header-height) + 4rem) var(--content-gutter) 5rem}
+.hero-slide{display:none;max-width:39rem;animation:slide-in .55s ease both}
+.hero-slide.is-active{display:block}
+.hero-slide h1{margin:0;font-family:var(--font-heading);font-size:clamp(2.8rem,5.1vw,4.4rem);font-weight:400;line-height:1.06;letter-spacing:.17em}
+.hero-intro{max-width:35rem;margin:1.35rem 0 0;font-size:clamp(.95rem,1.25vw,1.12rem);font-weight:400;line-height:1.65;letter-spacing:.015em}
+.hero-description{max-width:31rem;margin:.65rem 0 0;font-size:.82rem;font-weight:300;line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
+.hero-button{min-height:2.25rem;display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1rem;font-size:.62rem;text-decoration:none;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.hero-button-primary{color:#242424;background:#fff;border:.0625rem solid #fff}
+.hero-button-primary:hover{color:#fff;background:transparent}
+.hero-button-secondary{color:#fff;background:transparent;border:.0625rem solid rgba(255,255,255,.9)}
+.hero-button-secondary:hover{color:#222;background:#fff}
+.hero-pagination{position:absolute;top:50%;right:var(--content-gutter);display:flex;flex-direction:column;gap:.65rem;transform:translateY(-50%)}
+.pagination-dot{width:.72rem;height:.72rem;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.42);cursor:pointer;transition:background-color .2s ease,transform .2s ease}
+.pagination-dot:hover{transform:scale(1.16)}
+.pagination-dot.is-active{background:#fff}
+@keyframes slide-in{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:90rem){.hero{min-height:100svh}.hero-content{padding-left:max(var(--content-gutter),calc((100vw - 90rem)/2))}}
+@media(max-width:48rem){
+.hero{min-height:max(43rem,100svh);align-items:flex-end}
+.hero-background{background-position:57% center}
+.hero-shade{background:linear-gradient(0deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.48) 48%,rgba(0,0,0,.12) 100%)}
+.hero-content{padding:10rem var(--content-gutter) 7rem}
+.hero-slide{max-width:34rem}
+.hero-slide h1{font-size:clamp(2.3rem,9vw,3.5rem);letter-spacing:.12em}
+.hero-intro{margin-top:1rem;font-size:.92rem}
+.hero-description{font-size:.76rem}
+.hero-pagination{top:auto;right:var(--content-gutter);bottom:2.5rem;flex-direction:row;transform:none}
+}
+@media(max-width:30rem){.hero{min-height:48rem}.hero-content{padding-bottom:7.5rem}.hero-slide h1{font-size:2.15rem}.hero-actions{gap:.5rem}.hero-button{min-height:2.5rem}}
 </style>
+<script>
+const slides=[...document.querySelectorAll('.hero-slide')];
+const dots=[...document.querySelectorAll('.pagination-dot')];
+let activeIndex=0;let autoAdvance;
+const showSlide=(nextIndex)=>{
+ activeIndex=(nextIndex+slides.length)%slides.length;
+ slides.forEach((slide,index)=>{const active=index===activeIndex;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));});
+ dots.forEach((dot,index)=>{const active=index===activeIndex;dot.classList.toggle('is-active',active);dot.setAttribute('aria-pressed',String(active));});
+};
+const restartAutoAdvance=()=>{
+ window.clearInterval(autoAdvance);
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)autoAdvance=window.setInterval(()=>showSlide(activeIndex+1),7000);
+};
+dots.forEach((dot,index)=>dot.addEventListener('click',()=>{showSlide(index);restartAutoAdvance();}));
+restartAutoAdvance();
+</script>
