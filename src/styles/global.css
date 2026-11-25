@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -10,7 +10,7 @@
   --color-muted: #757172;
   --color-charcoal: #292929;
   --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
   --content-gutter: clamp(1.25rem, 5.5vw, 5.75rem);
   --topbar-height: 2rem;
   --header-height: 4rem;
@@ -40,19 +40,19 @@ img { display: block; max-width: 100%; }
 /* Homepage components: global selectors keep layout reliable in Wix Astro rendering. */
 .site-topbar{position:relative;z-index:20;height:var(--topbar-height);display:flex;align-items:stretch;padding-inline:var(--content-gutter);background:rgba(43,43,43,.94);color:#fff}
 .site-tabs{display:flex;height:100%;align-items:stretch}
-.site-tab{min-width:5.5rem;display:inline-flex;justify-content:center;align-items:center;padding-inline:1rem;color:#fff;text-decoration:none;font-size:.72rem;font-weight:400;border-bottom:.125rem solid transparent}
+.site-tab{min-width:5.5rem;display:inline-flex;justify-content:center;align-items:center;padding-inline:1rem;color:#fff;text-decoration:none;font-size:.9rem;font-weight:400;border-bottom:.125rem solid transparent}
 .site-tab.is-active{background:rgba(255,255,255,.12);border-bottom-color:var(--color-primary)}
 .site-header{position:absolute;z-index:15;inset:var(--topbar-height) 0 auto;min-height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:.65rem var(--content-gutter);color:#fff;background:rgba(255,255,255,.16);border-bottom:.0625rem solid rgba(255,255,255,.2)}
 .brand{display:inline-flex;flex:0 0 auto;align-items:center;gap:.6rem;color:#fff;text-decoration:none}
 .brand-mark{display:inline-flex;align-items:center;white-space:nowrap;font-size:1.5rem;line-height:1;font-weight:400;letter-spacing:-.045em}
 .brand-slash{margin-inline:.12rem;font-weight:300}
-.brand-description{font-size:.48rem;line-height:1.35;font-weight:400;white-space:nowrap}
+.brand-description{font-size:.65rem;line-height:1.15;font-weight:400;white-space:nowrap}
 .primary-navigation{display:flex;align-items:center;justify-content:flex-end;gap:clamp(.7rem,1.5vw,1.45rem)}
-.primary-navigation>a:not(.header-cta){color:#fff;font-size:.68rem;line-height:1.2;text-decoration:none;white-space:nowrap}
+.primary-navigation>a:not(.header-cta){color:#fff;font-size:.9rem;line-height:1.2;text-decoration:none;white-space:nowrap}
 .nav-divider{width:.0625rem;height:1.25rem;background:rgba(255,255,255,.75)}
 .phone-link{display:inline-flex;align-items:center;gap:.45rem}
 .phone-icon{display:inline-grid;place-items:center;width:1rem;height:1rem;border-radius:50%;background:#fff;color:#333;font-size:.68rem}
-.header-cta{min-height:2rem;display:inline-flex;align-items:center;justify-content:center;padding:.5rem .9rem;background:#fff;color:#222;font-size:.62rem;text-decoration:none;white-space:nowrap}
+.header-cta{min-height:2rem;display:inline-flex;align-items:center;justify-content:center;padding:.5rem .9rem;background:#fff;color:#222;font-size:.85rem;text-decoration:none;white-space:nowrap}
 .menu-toggle{display:none}
 .hero{position:relative;min-height:max(42rem,calc(100svh - var(--topbar-height)));display:flex;align-items:center;overflow:hidden;isolation:isolate;color:#fff;background:#45413d}
 .hero-background,.hero-shade{position:absolute;inset:0;z-index:-1;pointer-events:none}
@@ -62,10 +62,10 @@ img { display: block; max-width: 100%; }
 .hero-slide{display:none;max-width:39rem;animation:dh-slide-in .55s ease both}
 .hero-slide.is-active{display:block}
 .hero-slide h1{margin:0;color:#fff;font-family:var(--font-heading);font-size:clamp(2.8rem,5.1vw,4.4rem);font-weight:400;line-height:1.06;letter-spacing:.17em}
-.hero-intro{max-width:35rem;margin:1.35rem 0 0;color:#fff;font-size:clamp(.95rem,1.25vw,1.12rem);font-weight:400;line-height:1.65;letter-spacing:.015em}
-.hero-description{max-width:31rem;margin:.65rem 0 0;color:#fff;font-size:.82rem;font-weight:300;line-height:1.85}
+.hero-intro{max-width:35rem;margin:1.35rem 0 0;color:#fff;font-size:clamp(1.1rem,1.4vw,1.3rem);font-weight:400;line-height:1.5;letter-spacing:.015em}
+.hero-description{max-width:31rem;margin:.65rem 0 0;color:#fff;font-size:1rem;font-weight:400;line-height:1.55}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
-.hero-button{min-height:2.25rem;display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1rem;font-size:.62rem;text-decoration:none}
+.hero-button{min-height:2.25rem;display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1rem;font-size:.85rem;text-decoration:none}
 .hero-button-primary{color:#242424;background:#fff;border:.0625rem solid #fff}
 .hero-button-secondary{color:#fff;background:transparent;border:.0625rem solid rgba(255,255,255,.9)}
 .hero-pagination{position:absolute;z-index:2;top:50%;right:var(--content-gutter);display:flex;flex-direction:column;gap:.65rem;transform:translateY(-50%)}
@@ -73,7 +73,7 @@ img { display: block; max-width: 100%; }
 .pagination-dot.is-active{background:#fff}
 @keyframes dh-slide-in{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:90rem){.hero{min-height:calc(100svh - var(--topbar-height))}.hero-content{padding-left:max(var(--content-gutter),calc((100vw - 90rem)/2))}}
-@media(max-width:64rem){.site-header{gap:1rem}.primary-navigation{gap:.65rem}.primary-navigation>a:not(.header-cta){font-size:.58rem}.brand-mark{font-size:1.2rem}.brand-description{font-size:.4rem}}
+@media(max-width:64rem){.site-header{gap:1rem}.primary-navigation{gap:.65rem}.primary-navigation>a:not(.header-cta){font-size:.8rem}.brand-mark{font-size:1.2rem}.brand-description{font-size:.4rem}}
 @media(max-width:48rem){
 :root{--topbar-height:2.25rem;--header-height:4.25rem}
 .site-header{min-height:var(--header-height);padding-block:.65rem;background:rgba(35,35,35,.42)}
