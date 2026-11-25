@@ -16,5 +16,16 @@ export default defineConfig({
     domains: ["static.wixstatic.com"],
   },
 
+  // Polling avoids Windows fs.watch EBUSY errors on locked/synced image files.
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 500,
+        ignored: ['**/node_modules/**', '**/.git/**'],
+      },
+    },
+  },
+
   output: "server",
 });
