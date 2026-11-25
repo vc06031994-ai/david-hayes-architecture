@@ -55,10 +55,10 @@ img { display: block; max-width: 100%; }
 .header-cta{min-height:2rem;display:inline-flex;align-items:center;justify-content:center;padding:.5rem .9rem;background:#fff;color:#222;font-size:.85rem;text-decoration:none;white-space:nowrap}
 .menu-toggle{display:none}
 .hero{position:relative;min-height:max(42rem,calc(100svh - var(--topbar-height)));display:flex;align-items:center;overflow:hidden;isolation:isolate;color:#fff;background:#45413d}
-.hero-background,.hero-shade{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.hero-background{background-image:url('/images/david-hayes-hero.webp');background-size:cover;background-position:center 52%}
-.hero-shade{z-index:0;background:linear-gradient(90deg,rgba(0,0,0,.53) 0%,rgba(0,0,0,.34) 42%,rgba(0,0,0,.14) 100%),linear-gradient(180deg,rgba(0,0,0,.17),transparent 34%,rgba(0,0,0,.1))}
-.hero-content{position:relative;z-index:1;width:min(100%,78rem);padding:calc(var(--header-height) + 4rem) var(--content-gutter) 5rem}
+.hero-background,.hero-shade{position:absolute;inset:0;pointer-events:none}
+.hero-background{z-index:0;background-image:url('/images/david-hayes-hero-optimized.webp');background-size:cover;background-position:center 52%}
+.hero-shade{z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.53) 0%,rgba(0,0,0,.34) 42%,rgba(0,0,0,.14) 100%),linear-gradient(180deg,rgba(0,0,0,.17),transparent 34%,rgba(0,0,0,.1))}
+.hero-content{position:relative;z-index:2;width:min(100%,78rem);padding:calc(var(--header-height) + 4rem) var(--content-gutter) 5rem}
 .hero-slide{display:none;max-width:39rem;animation:dh-slide-in .55s ease both}
 .hero-slide.is-active{display:block}
 .hero-slide h1{margin:0;color:#fff;font-family:var(--font-heading);font-size:clamp(2.8rem,5.1vw,4.4rem);font-weight:400;line-height:1.06;letter-spacing:.17em}
@@ -68,7 +68,7 @@ img { display: block; max-width: 100%; }
 .hero-button{min-height:2.25rem;display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1rem;font-size:.85rem;text-decoration:none}
 .hero-button-primary{color:#242424;background:#fff;border:.0625rem solid #fff}
 .hero-button-secondary{color:#fff;background:transparent;border:.0625rem solid rgba(255,255,255,.9)}
-.hero-pagination{position:absolute;z-index:2;top:50%;right:var(--content-gutter);display:flex;flex-direction:column;gap:.65rem;transform:translateY(-50%)}
+.hero-pagination{position:absolute;z-index:3;top:50%;right:var(--content-gutter);display:flex;flex-direction:column;gap:.65rem;transform:translateY(-50%)}
 .pagination-dot{width:.72rem;height:.72rem;min-width:.72rem;min-height:.72rem;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.48);cursor:pointer;appearance:none}
 .pagination-dot.is-active{background:#fff}
 @keyframes dh-slide-in{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:translateY(0)}}
